@@ -1,0 +1,872 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HKTestingKit
+import AVFoundation
+import Alamofire
+import CommonCrypto
+import CoreGraphics
+import CoreMedia
+import HKEyeTrackingKit
+import QuartzCore
+import ReplayKit
+import SDWebImage
+import SafariServices
+import SceneKit
+import Swift
+import UIKit
+import WebKit
+import simd
+public typealias HKDirectUploadCompletion = ((Swift.String?, Swift.Error?) -> Swift.Void)
+@objc public class HKDirectUploadQueue : ObjectiveC.NSObject {
+  public static let shared: HKTestingKit.HKDirectUploadQueue
+  public func uploadTask(_ task: HKTestingKit.HKUploadTask, requestManager: HKTestingKit.HKRequestManager, completion: HKTestingKit.HKDirectUploadCompletion? = nil)
+  public func queueUpload(_ url: Alamofire.URLConvertible, requestManager: HKTestingKit.HKRequestManager, method: Alamofire.HTTPMethod = .get, parameters: [Swift.String : Any]? = nil, headers: Alamofire.HTTPHeaders? = nil, encodingCompletion: ((Alamofire.Request) -> Swift.Void)? = nil, completion: ((Alamofire.DataResponse<Any>?, Swift.Error?) -> Swift.Void)? = nil)
+  @objc deinit
+}
+extension UIImage {
+  public func save(path: Swift.String)
+}
+@objc public class HKActionButton : UIKit.UIButton {
+  final public let activityIndictor: UIKit.UIActivityIndicatorView
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc override dynamic public func layoutSubviews()
+  @objc override dynamic public var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  public func setLoading(_ loading: Swift.Bool)
+  public func showGradient(_ show: Swift.Bool)
+  @objc deinit
+}
+public struct HKUploadTask {
+  public let data: Foundation.Data?
+  public let url: Foundation.URL?
+  public let fileName: Swift.String
+  public let mimeType: Swift.String
+  public let isDirectUpload: Swift.Bool
+  public let md5Hash: Swift.String?
+  public init(data: Foundation.Data? = nil, url: Foundation.URL? = nil, fileName: Swift.String, mimeType: Swift.String, isDirectUpload: Swift.Bool = false)
+}
+extension UIWindow {
+  public func swizzle()
+  @objc dynamic public func swizzledSendEvent(_ event: UIKit.UIEvent)
+}
+@objc public class HKImageProject : HKTestingKit.HKProject {
+  final public let imageURL: Foundation.URL?
+  final public let localImagePath: Swift.String?
+  public var localImageUrl: Foundation.URL? {
+    get
+  }
+  public init(id: Swift.String? = nil, localImagePath: Swift.String?, imageURL: Foundation.URL? = nil, type: HKTestingKit.HKTestingContentType, title: Swift.String, thumbnailUrl: Foundation.URL? = nil, thumbnailSize: CoreGraphics.CGSize? = nil, instructions: Swift.String? = nil, configuration: HKTestingKit.HKTestConfiguration = HKTestConfiguration(), locked: Swift.Bool = true)
+  override public func dictRep() -> [Swift.String : Any]
+  required public init?(dictRep: [Swift.String : Any])
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override public func encode(with aCoder: Foundation.NSCoder)
+  override public init(id: Swift.String?, type: HKTestingKit.HKTestingContentType, title: Swift.String, thumbnailUrl: Foundation.URL? = super, thumbnailSize: CoreGraphics.CGSize? = super, sessionCount: Swift.Int = super, instructions: Swift.String?, configuration: HKTestingKit.HKTestConfiguration, locked: Swift.Bool, publicInviteUrl: Foundation.URL? = super)
+  @objc deinit
+}
+@objc public class Hawkeye : ObjectiveC.NSObject {
+  public static var areVisualizationsHidden: Swift.Bool
+  public static func setToken(_ token: Swift.String, appID: Swift.String)
+  public static func appDidOpenWithURL(_ url: Foundation.URL, mainWindow: UIKit.UIWindow? = nil)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum HKEyeTrackingType : Swift.String {
+  case optional
+  case required
+  case disabled
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum HKControlsAppearance : Swift.String {
+  case shown
+  case hidden
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public class HKTestConfiguration : ObjectiveC.NSObject, Foundation.NSCoding {
+  public var eyeTrackingType: HKTestingKit.HKEyeTrackingType {
+    get
+    }
+  public var isScreenRecordingEnabled: Swift.Bool {
+    get
+    }
+  public var isAudioEnabled: Swift.Bool {
+    get
+    }
+  public var isVisualizationsHidden: Swift.Bool {
+    get
+    }
+  public var isHawkeyeControlsHidden: Swift.Bool {
+    get
+    }
+  public var controlsAppearance: HKTestingKit.HKControlsAppearance {
+    get
+    }
+  public var isUserInformationPromptEnabled: Swift.Bool {
+    get
+    }
+  public var welcomeMessage: Swift.String? {
+    get
+    }
+  public var exitMessage: Swift.String? {
+    get
+    }
+  public var exitURL: Foundation.URL? {
+    get
+    }
+  public var exitTitle: Swift.String? {
+    get
+    }
+  public init(eyeTrackingType: HKTestingKit.HKEyeTrackingType? = nil, isScreenRecordingEnabled: Swift.Bool? = nil, isAudioEnabled: Swift.Bool? = nil, isVisualizationsHidden: Swift.Bool? = nil, tester: HKTestingKit.HKTester? = nil, isUserInformationPromptEnabled: Swift.Bool? = nil, welcomeMessage: Swift.String? = nil, exitMessage: Swift.String? = nil, exitURL: Foundation.URL? = nil, exitTitle: Swift.String? = nil, isHawkeyeControlsHidden: Swift.Bool? = nil, controlsAppearance: HKTestingKit.HKControlsAppearance? = nil)
+  convenience public init(dictRep: [Swift.String : Any])
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKWebProject : HKTestingKit.HKProject {
+  final public let url: Foundation.URL
+  convenience public init?(id: Swift.String? = nil, urlString: Swift.String, type: HKTestingKit.HKTestingContentType, title: Swift.String, thumbnailUrl: Foundation.URL? = nil, thumbnailSize: CoreGraphics.CGSize? = nil, instructions: Swift.String? = nil, configuration: HKTestingKit.HKTestConfiguration = HKTestConfiguration())
+  required public init?(dictRep: [Swift.String : Any])
+  public init(id: Swift.String? = nil, url: Foundation.URL, type: HKTestingKit.HKTestingContentType, title: Swift.String, thumbnailUrl: Foundation.URL? = nil, thumbnailSize: CoreGraphics.CGSize? = nil, instructions: Swift.String? = nil, configuration: HKTestingKit.HKTestConfiguration = HKTestConfiguration(), locked: Swift.Bool = true)
+  override public func dictRep() -> [Swift.String : Any]
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override public func encode(with aCoder: Foundation.NSCoder)
+  override public init(id: Swift.String?, type: HKTestingKit.HKTestingContentType, title: Swift.String, thumbnailUrl: Foundation.URL? = super, thumbnailSize: CoreGraphics.CGSize? = super, sessionCount: Swift.Int = super, instructions: Swift.String?, configuration: HKTestingKit.HKTestConfiguration, locked: Swift.Bool, publicInviteUrl: Foundation.URL? = super)
+  @objc deinit
+}
+public protocol HKTestingManagerDelegate : AnyObject {
+  func testingManagerScreenRecorderDidFail(manager: HKTestingKit.HKTestingManager)
+  func testingManagerDidRestartTest(manager: HKTestingKit.HKTestingManager)
+  func testingManagerDidFinishTest(manager: HKTestingKit.HKTestingManager)
+}
+@objc public class HKTestingManager : ObjectiveC.NSObject {
+  public static let shared: HKTestingKit.HKTestingManager
+  public var isDataCollectionPaused: Swift.Bool {
+    get
+    }
+  public var isContentLoading: Swift.Bool {
+    get
+    }
+  public var isRunning: Swift.Bool {
+    get
+    }
+  public var didTestSaveFail: Swift.Bool {
+    get
+    }
+  weak public var delegate: HKTestingKit.HKTestingManagerDelegate?
+  final public let overlayWindow: UIKit.UIWindow
+  public var originalWindow: UIKit.UIWindow?
+  public func prepareForCalibration()
+  public func shutDown()
+  public func start(session: HKTestingKit.HKSession, project: HKTestingKit.HKProject, keyView: UIKit.UIView?)
+  public func finish(completion: ((HKTestingKit.HKSession?, HKTestingKit.HKSessionUploadError?) -> Swift.Void)? = nil, progress: ((Swift.Double) -> Swift.Void)? = nil)
+  public func setContentIsLoading(_ isLoading: Swift.Bool)
+  public func pauseTesting()
+  public func resumeTesting()
+  public func restartTesting()
+  public func cancelTesting()
+  public func logGestures(touches: [UIKit.UITouch])
+  public func logNewPage(identifier: Swift.String, title: Swift.String, pageElementMap: HKTestingKit.HKGeneratedPageElementMap? = nil, isScrollable: Swift.Bool = true)
+  public func requestScreenRecordPermissions(isMicrophoneEnabled: Swift.Bool, completion: HKTestingKit.HKScreenRecordPermissionCompletion? = nil)
+  @objc deinit
+}
+extension HKTestingManager : HKEyeTrackingKit.HKEyeTrackingManagerDelegate {
+  @objc dynamic public func eyeTrackingManagerDidUpdateEyeScreenPosition(manager: HKEyeTrackingKit.HKEyeTrackingManager, screenPosition: CoreGraphics.CGPoint)
+  @objc dynamic public func eyeTrackingManagerDidPauseEyeTracking(manager: HKEyeTrackingKit.HKEyeTrackingManager)
+  @objc dynamic public func eyeTrackingManagerPresentationViewController(manager: HKEyeTrackingKit.HKEyeTrackingManager) -> UIKit.UIViewController?
+}
+@objc public class HKTokenAuthenticationManager : ObjectiveC.NSObject, HKTestingKit.HKAuthenticationManager {
+  public var requestHeaders: [Swift.String : Swift.String]? {
+    get
+  }
+  public init(token: Swift.String)
+  public func authenticationManagerDidRecieveUnauthorizedResponse()
+  public func authenticationManagerDidRecieveAuthorizedResponse(_ response: Foundation.HTTPURLResponse)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum HKSubscriptionPlanInterval : Swift.String {
+  case day
+  case week
+  case month
+  case year
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public class HKSubscriptionPlan : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let id: Swift.String
+  final public let name: Swift.String
+  final public let projectLimit: Swift.Int
+  final public let sessionLimit: Swift.Int
+  public init(id: Swift.String, name: Swift.String, projectLimit: Swift.Int, sessionLimit: Swift.Int)
+  convenience public init?(dictRep: [Swift.String : Any])
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum HKTestingContentType : Swift.String {
+  case image
+  case website
+  case app
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum HKPageOrientation : Swift.Int {
+  case portrait
+  case landscape
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum HKSessionState : Swift.String {
+  case readyToBegin
+  case inProgress
+  case completed
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public class HKSession : ObjectiveC.NSObject, Foundation.NSCoding {
+  public static let identifierKey: Swift.String
+  public static let titleKey: Swift.String
+  public static let testerKey: Swift.String
+  public static let typeKey: Swift.String
+  public static let thumbnailUrlKey: Swift.String
+  public static let thumbnailSizeKey: Swift.String
+  public static let thumbnailMetadataKey: Swift.String
+  public static let startTimeKey: Swift.String
+  public static let endTimeKey: Swift.String
+  public static let screenRecordingUrlKey: Swift.String
+  public static let favoriteKey: Swift.String
+  public static let screenSizeKey: Swift.String
+  public static let widthKey: Swift.String
+  public static let heightKey: Swift.String
+  public static let inviteTokenKey: Swift.String
+  public static let stateKey: Swift.String
+  public static let pageCountKey: Swift.String
+  public static let visitedKey: Swift.String
+  public static let deviceTypeKey: Swift.String
+  public static let deviceModelKey: Swift.String
+  public static let deviceUUIDKey: Swift.String
+  public static let iosVersionKey: Swift.String
+  public static let appBuildKey: Swift.String
+  public static let appVersionKey: Swift.String
+  public static let lockedKey: Swift.String
+  public var identifier: Swift.String
+  public var isVisited: Swift.Bool
+  public var title: Swift.String
+  public var tester: HKTestingKit.HKTester?
+  public var type: HKTestingKit.HKTestingContentType
+  final public let screenSize: CoreGraphics.CGSize?
+  final public let thumbnailUrl: Foundation.URL?
+  public var thumbnailSize: CoreGraphics.CGSize?
+  public var isFavorite: Swift.Bool
+  public var state: HKTestingKit.HKSessionState
+  public var pageCount: Swift.Int
+  public var locked: Swift.Bool
+  public var startTime: Foundation.Date?
+  public var endTime: Foundation.Date?
+  public var duration: Foundation.TimeInterval? {
+    get
+  }
+  public var screenRecordingUrl: Foundation.URL?
+  public var inviteToken: Swift.String?
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  convenience public init?(dictRep: [Swift.String : Any])
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  public var dictRep: [Swift.String : Any] {
+    get
+  }
+  public var orientation: HKTestingKit.HKPageOrientation {
+    get
+  }
+  public var timeSummary: Swift.String? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIView {
+  public func snapshotImage(size: CoreGraphics.CGSize? = nil) -> UIKit.UIImage?
+}
+extension WKWebView {
+  public func snapshotFullContent(completion: @escaping (UIKit.UIImage?) -> Swift.Void)
+}
+@objc public class HKAppProject : HKTestingKit.HKProject {
+  final public let urlScheme: Swift.String
+  final public let installURL: Foundation.URL?
+  final public let appName: Swift.String
+  public init(id: Swift.String? = nil, urlScheme: Swift.String, installURL: Foundation.URL? = nil, appName: Swift.String, type: HKTestingKit.HKTestingContentType, title: Swift.String, thumbnailUrl: Foundation.URL? = nil, thumbnailSize: CoreGraphics.CGSize? = nil, instructions: Swift.String? = nil, configuration: HKTestingKit.HKTestConfiguration = HKTestConfiguration(), locked: Swift.Bool = true)
+  required public init?(dictRep: [Swift.String : Any])
+  override public func dictRep() -> [Swift.String : Any]
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override public func encode(with aCoder: Foundation.NSCoder)
+  override public init(id: Swift.String?, type: HKTestingKit.HKTestingContentType, title: Swift.String, thumbnailUrl: Foundation.URL? = super, thumbnailSize: CoreGraphics.CGSize? = super, sessionCount: Swift.Int = super, instructions: Swift.String?, configuration: HKTestingKit.HKTestConfiguration, locked: Swift.Bool, publicInviteUrl: Foundation.URL? = super)
+  @objc deinit
+}
+@objc public class HKTesterExporter : ObjectiveC.NSObject {
+  public static func emailsForSessions(_ sessions: [HKTestingKit.HKSession]) -> [Swift.String]
+  public static func exportTesters(project: HKTestingKit.HKProject, sessions: [HKTestingKit.HKSession]) -> Foundation.URL?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum HKPageState : Swift.String {
+  case capturingScreenshots
+  case generatingHeatmap
+  case completed
+  case failed
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public class HKPage : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let identifier: Swift.String
+  final public let state: HKTestingKit.HKPageState
+  final public let title: Swift.String?
+  final public let url: Swift.String?
+  final public let thumbnailSize: CoreGraphics.CGSize?
+  final public let thumbnailURL: Foundation.URL?
+  final public let screenCaptureURL: Foundation.URL?
+  final public let isScrollable: Swift.Bool
+  final public let startTime: Foundation.Date
+  final public let endTime: Foundation.Date
+  final public let pageElementMap: HKTestingKit.HKPageElementMap?
+  public var duration: Foundation.TimeInterval {
+    get
+  }
+  public var contentSize: CoreGraphics.CGSize {
+    get
+  }
+  final public let eyePositions: [HKTestingKit.HKEyePosition]
+  final public let keyFocusPoints: [HKTestingKit.HKEyePosition]
+  final public let heatmapFocusPoints: [HKTestingKit.HKEyePosition]
+  final public let gestures: [HKTestingKit.HKGesture]
+  convenience public init?(dictRep: [Swift.String : Any])
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  public var dictRep: [Swift.String : Any] {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol HKSetupTestViewControllerDelegate : AnyObject {
+  func setupTestViewControllerDidCancel(_ viewController: HKTestingKit.HKTestOverlayViewController)
+  func setupTestViewControllerDidUpdateConfiguration(_ viewController: HKTestingKit.HKTestOverlayViewController, configuration: HKTestingKit.HKTestConfiguration)
+  func setupTestViewControllerDidFinish(_ viewController: HKTestingKit.HKTestOverlayViewController, session: HKTestingKit.HKSession?, configuration: HKTestingKit.HKTestConfiguration, invite: HKTestingKit.HKSessionInvite?)
+}
+@objc public class HKSetupTestViewController : HKTestingKit.HKTestOverlayViewController {
+  public var contentType: HKTestingKit.HKTestingContentType {
+    get
+    }
+  public var currentUserId: Swift.String? {
+    get
+    }
+  public var project: HKTestingKit.HKProject {
+    get
+    }
+  public var configuration: HKTestingKit.HKTestConfiguration {
+    get
+    }
+  public var origEyeTrackingType: HKTestingKit.HKEyeTrackingType {
+    get
+    }
+  public var tester: HKTestingKit.HKTester? {
+    get
+    }
+  public var sessionInvite: HKTestingKit.HKSessionInvite? {
+    get
+    }
+  public var session: HKTestingKit.HKSession? {
+    get
+    }
+  weak public var delegate: HKTestingKit.HKSetupTestViewControllerDelegate?
+  public init(project: HKTestingKit.HKProject, sessionInvite: HKTestingKit.HKSessionInvite?, currentUserId: Swift.String?, isTestConfigurable: Swift.Bool = false)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidLayoutSubviews()
+  override public func setLoading(_ loading: Swift.Bool, title: Swift.String = "", animated: Swift.Bool)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc deinit
+}
+extension HKSetupTestViewController {
+  @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+}
+public typealias HKScreenRecordPermissionCompletion = (Swift.Bool, Swift.Error?) -> Swift.Void
+public typealias HKMicrophonePermissionCompletion = (Swift.Bool) -> Swift.Void
+@objc public class HKOverlayWindow : UIKit.UIWindow {
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc override dynamic public func hitTest(_ point: CoreGraphics.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+  @available(iOS 13.0, *)
+  @objc override dynamic public init(windowScene: UIKit.UIWindowScene)
+  @objc deinit
+}
+@objc public class HKOverlayWindowViewController : UIKit.UIViewController {
+  @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public enum HKSessionUploadError : Swift.Error {
+  case screenRecordingUploadFailed
+  case screenRecordingSaveFailed
+  case pageVisitSaveFailed
+  case sessionUploadFaliure
+  public static func == (a: HKTestingKit.HKSessionUploadError, b: HKTestingKit.HKSessionUploadError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public typealias HKSessionUploadCompletion = ((HKTestingKit.HKSession?, HKTestingKit.HKSessionUploadError?) -> Swift.Void)
+public typealias HKSessionUploadProgress = ((Swift.Double) -> Swift.Void)
+@objc public class HKSessionUploadManager : ObjectiveC.NSObject {
+  public static let shared: HKTestingKit.HKSessionUploadManager
+  public func createPendingSession(projectId: Swift.String, userId: Swift.String?, session: HKTestingKit.HKSession, completion: ((HKTestingKit.HKSession?) -> Swift.Void)?)
+  public func updateSession(session: HKTestingKit.HKSession, completion: ((HKTestingKit.HKSession?) -> Swift.Void)?)
+  public func uploadCompletedSession(session: HKTestingKit.HKSession, completion: HKTestingKit.HKSessionUploadCompletion? = nil, progress: HKTestingKit.HKSessionUploadProgress? = nil)
+  public func cancelSession(session: HKTestingKit.HKSession, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKTestOverlayViewController : UIKit.UIViewController {
+  public var isBrandingVisible: Swift.Bool {
+    get
+    set
+  }
+  public var loadingLabel: UIKit.UILabel! {
+    get
+    }
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidLayoutSubviews()
+  @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  public func setLoading(_ loading: Swift.Bool, title: Swift.String = "", animated: Swift.Bool)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public class HKProject : ObjectiveC.NSObject, Foundation.NSCoding {
+  public static let idKey: Swift.String
+  public static let typeKey: Swift.String
+  public static let titleKey: Swift.String
+  public static let thumbnailUrlKey: Swift.String
+  public static let thumbnailMetadataKey: Swift.String
+  public static let thumbnailSizeKey: Swift.String
+  public static let sessionCountKey: Swift.String
+  public static let instructionsKey: Swift.String
+  public static let configurationKey: Swift.String
+  public static let lockedKey: Swift.String
+  public static let publicInviteKey: Swift.String
+  public static let publicInviteUrlKey: Swift.String
+  final public let type: HKTestingKit.HKTestingContentType
+  public var id: Swift.String
+  public var title: Swift.String
+  public var thumbnailUrl: Foundation.URL?
+  public var thumbnailSize: CoreGraphics.CGSize?
+  public var locked: Swift.Bool
+  public var publicInviteUrl: Foundation.URL?
+  public var sessionCount: Swift.Int
+  public var instructions: Swift.String?
+  public var configuration: HKTestingKit.HKTestConfiguration
+  public init(id: Swift.String?, type: HKTestingKit.HKTestingContentType, title: Swift.String, thumbnailUrl: Foundation.URL? = nil, thumbnailSize: CoreGraphics.CGSize? = nil, sessionCount: Swift.Int = 0, instructions: Swift.String?, configuration: HKTestingKit.HKTestConfiguration, locked: Swift.Bool, publicInviteUrl: Foundation.URL? = nil)
+  required public init?(dictRep: [Swift.String : Any])
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  public func dictRep() -> [Swift.String : Any]
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  public static func deserialize(_ projectDict: [Swift.String : Any]) -> HKTestingKit.HKProject?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKEyePosition : ObjectiveC.NSObject, Foundation.NSCoding {
+  public var screenLocation: CoreGraphics.CGPoint?
+  public var absoluteScreenLocation: CoreGraphics.CGPoint?
+  public var relativeLocation: CoreGraphics.CGPoint?
+  public var relativePercentage: CoreGraphics.CGPoint?
+  public var elementUid: Swift.String?
+  public var standardDeviation: Swift.Float?
+  final public let startTimestamp: Foundation.Date
+  final public let endTimestamp: Foundation.Date
+  final public let loading: Swift.Bool
+  public var duration: Foundation.TimeInterval {
+    get
+  }
+  public init(elementUid: Swift.String?, screenLocation: CoreGraphics.CGPoint?, relativeLocation: CoreGraphics.CGPoint? = nil, relativePercentage: CoreGraphics.CGPoint? = nil, absoluteScreenLocation: CoreGraphics.CGPoint? = nil, standardDeviation: Swift.Float? = nil, startTimestamp: Foundation.Date, endTimestamp: Foundation.Date, loading: Swift.Bool)
+  convenience public init?(dictRep: [Swift.String : Any])
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKAverageLook : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let id: Swift.String
+  final public let absolutePosition: CoreGraphics.CGPoint
+  final public let relativePosition: CoreGraphics.CGPoint
+  final public let origin: CoreGraphics.CGPoint
+  final public let count: Swift.Int
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Data {
+  public var md5Hash: Swift.String {
+    get
+  }
+}
+@objc public class HKSubscription : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let id: Swift.String
+  final public let startDate: Foundation.Date
+  final public let endDate: Foundation.Date
+  final public let plan: HKTestingKit.HKSubscriptionPlan
+  final public let cancelDate: Foundation.Date?
+  public init(id: Swift.String, startDate: Foundation.Date, endDate: Foundation.Date, cancelDate: Foundation.Date? = nil, plan: HKTestingKit.HKSubscriptionPlan)
+  convenience public init?(dictRep: [Swift.String : Any])
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension HKRequestManager {
+  public static let sdkApiURL: Swift.String
+  public static let sdk: HKTestingKit.HKRequestManager
+  public static let sdkBackground: HKTestingKit.HKRequestManager
+}
+@objc public class HKRequestManager : ObjectiveC.NSObject {
+  public static var defaultUrl: Swift.String
+  public static let backendDateFormat: Swift.String
+  final public let baseApiUrl: Alamofire.URLConvertible
+  final public let allowsBackgroundRequests: Swift.Bool
+  public var authenticationManager: HKTestingKit.HKAuthenticationManager?
+  public init(baseApiUrl: Alamofire.URLConvertible, authenticationManager: HKTestingKit.HKAuthenticationManager? = nil, allowsBackgroundRequests: Swift.Bool = false)
+  @discardableResult
+  public func request(_ url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod = .get, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, allowUnathorized: Swift.Bool = false, validate: Swift.Bool = true, completion: @escaping (Alamofire.DataResponse<Any>) -> Swift.Void) -> Alamofire.DataRequest
+  public func upload(_ url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod = .get, parameters: Any? = nil, headers: Alamofire.HTTPHeaders? = nil, allowUnathorized: Swift.Bool = false, isBackground: Swift.Bool = false, encodingCompletion: ((Alamofire.Request) -> Swift.Void)? = nil, completion: ((Alamofire.DataResponse<Any>?, Swift.Error?) -> Swift.Void)? = nil)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc open class HKGesture : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let startDate: Foundation.Date
+  final public let endDate: Foundation.Date
+  final public let touches: [HKTestingKit.HKTouch]
+  public init(startDate: Foundation.Date, endDate: Foundation.Date, touches: [HKTestingKit.HKTouch])
+  convenience public init?(dictRep: [Swift.String : Any])
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  public var duration: Foundation.TimeInterval {
+    get
+  }
+  public var netDistance: Swift.Float {
+    get
+  }
+  public var isTap: Swift.Bool {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKGestureVisualizationView : UIKit.UIView {
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+extension UISpringTimingParameters {
+  convenience public init(damping: CoreGraphics.CGFloat, response: CoreGraphics.CGFloat, initialVelocity: CoreGraphics.CGVector = .zero)
+}
+@objc public class HKLook : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let id: Swift.String
+  final public let absolutePosition: CoreGraphics.CGPoint
+  final public let startedAt: Foundation.Date
+  final public let endedAt: Foundation.Date
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKPageElementMap : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let uid: Swift.String
+  final public let screenCaptureUrl: Foundation.URL
+  final public let screenSize: CoreGraphics.CGSize
+  final public let scrollSize: CoreGraphics.CGSize
+  final public let tapsCount: Swift.Int
+  final public let eyePositionsCount: Swift.Int
+  final public let rootElement: HKTestingKit.HKPageElement?
+  final public let averageLooks: [HKTestingKit.HKAverageLook]
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol HKTestCompletedViewControllerDelegate : AnyObject {
+  func testCompletedViewControllerDidSelectDone(_ viewController: HKTestingKit.HKTestCompletedViewController)
+  func testCompletedViewControllerDidSelectRetry(_ viewController: HKTestingKit.HKTestCompletedViewController)
+}
+@objc public class HKTestCompletedViewController : HKTestingKit.HKTestOverlayViewController {
+  public var doneButton: UIKit.UIButton! {
+    get
+    }
+  weak public var delegate: HKTestingKit.HKTestCompletedViewControllerDelegate?
+  public init(configuration: HKTestingKit.HKTestConfiguration, sessionInvite: HKTestingKit.HKSessionInvite?)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidLayoutSubviews()
+  public func animateEntrance()
+  public func updateProgress(_ percentage: Swift.Double, animated: Swift.Bool)
+  public func showCompleted()
+  public func showLoadingError(_ show: Swift.Bool, error: HKTestingKit.HKSessionUploadError? = nil)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc deinit
+}
+@objc public class HKTester : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let identifier: Swift.String?
+  final public let firstName: Swift.String
+  final public let lastName: Swift.String
+  final public let email: Swift.String
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  public var fullName: Swift.String {
+    get
+  }
+  public var formattedEmail: Swift.String {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKSessionInviteManager : ObjectiveC.NSObject {
+  public static func fetchSessionInvite(url: Foundation.URL, completion: ((HKTestingKit.HKSessionInvite?) -> Swift.Void)?)
+  public static func isInviteURL(_ url: Foundation.URL) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKVisualizationPlaybackView : UIKit.UIView {
+  public var currentTime: CoreMedia.CMTime?
+  public var scale: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public init(frame: CoreGraphics.CGRect, session: HKTestingKit.HKSession, pages: [HKTestingKit.HKPage])
+  public func stop()
+  public func updateForTime(_ time: CoreMedia.CMTime)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+@objc public class HKEyePositionVisualization : UIKit.UIView {
+  public init(screenPosition: CoreGraphics.CGPoint)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+@objc public class HKSpinnerView : UIKit.UIView {
+  @objc override dynamic public var tintColor: UIKit.UIColor! {
+    @objc get
+    @objc set
+  }
+  public var lineWidth: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public func setAnimating(_ animating: Swift.Bool)
+  @objc deinit
+}
+@objc public class HKGeneratedPageElementMap : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKFocusPoint : ObjectiveC.NSObject {
+  public var averagePoint: CoreGraphics.CGPoint {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension WKWebView {
+  public func exportHTML(completion: @escaping (Foundation.URL?, Swift.Error?) -> Swift.Void)
+}
+@objc public class HKSessionInvite : ObjectiveC.NSObject {
+  final public let id: Swift.String
+  final public let token: Swift.String
+  final public let project: HKTestingKit.HKProject
+  final public let organization: HKTestingKit.HKOrganization
+  final public let tester: HKTestingKit.HKTester?
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKGestureManager : ObjectiveC.NSObject {
+  public var gestures: [HKTestingKit.HKGesture]
+  @objc override dynamic public init()
+  public func logGestures(touches: [UIKit.UITouch])
+  @objc deinit
+}
+extension UIScreen {
+  public var pixelWidth: Swift.Int {
+    get
+  }
+  public var pixelHeight: Swift.Int {
+    get
+  }
+  public func pointToPixel(_ pointValue: CoreGraphics.CGFloat) -> Swift.Int
+}
+@objc public class HKFocusPointResult : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let screenLocation: CoreGraphics.CGPoint
+  final public let startTimestamp: Foundation.Date
+  final public let endTimestamp: Foundation.Date
+  public var duration: Foundation.TimeInterval {
+    get
+  }
+  public init(screenLocation: CoreGraphics.CGPoint, startTimestamp: Foundation.Date, endTimestamp: Foundation.Date)
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc open class HKTouch : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let timestamp: Foundation.Date
+  final public let location: CoreGraphics.CGPoint
+  final public let relativePercentage: CoreGraphics.CGPoint?
+  final public let relativeLocation: CoreGraphics.CGPoint?
+  final public let elementUid: Swift.String?
+  public init(timestamp: Foundation.Date, location: CoreGraphics.CGPoint, relativeLocation: CoreGraphics.CGPoint?, relativePercentage: CoreGraphics.CGPoint?, elementUid: Swift.String?)
+  convenience public init?(dictRep: [Swift.String : Any])
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol HKAuthenticationManager {
+  func authenticationManagerDidRecieveUnauthorizedResponse()
+  func authenticationManagerDidRecieveAuthorizedResponse(_ response: Foundation.HTTPURLResponse)
+  var requestHeaders: [Swift.String : Swift.String]? { get }
+}
+public enum HKPageElementType : Swift.String {
+  case button
+  case tableView
+  case tableViewCell
+  case collectionView
+  case collectionViewCell
+  case scrollView
+  case image
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+}
+@objc public class HKPageElement : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let uid: Swift.String
+  final public let frame: CoreGraphics.CGRect
+  final public let relativeFrame: CoreGraphics.CGRect?
+  final public let looksCount: Swift.Int
+  final public let uniqueLooksCount: Swift.Int
+  final public let avgFirstLook: Swift.Double
+  final public let avgLastLook: Swift.Double
+  final public let avgLookDuration: Swift.Double
+  final public let avgSessionPercentage: Swift.Double
+  final public let tapsCount: Swift.Int
+  final public let uniqueTapsCount: Swift.Int
+  final public let avgFirstTap: Swift.Double
+  final public let avgLastTap: Swift.Double
+  final public let depth: Swift.Int
+  final public let looks: [HKTestingKit.HKLook]
+  final public let screenshotUrl: Foundation.URL?
+  final public let contentSize: CoreGraphics.CGSize
+  final public let contentInset: UIKit.UIEdgeInsets
+  final public let isScrollable: Swift.Bool
+  final public let type: HKTestingKit.HKPageElementType?
+  public var parent: HKTestingKit.HKPageElement? {
+    get
+    }
+  public var children: [HKTestingKit.HKPageElement] {
+    get
+    }
+  final public let averageLooks: [HKTestingKit.HKAverageLook]
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  public var isLargeHtmlElement: Swift.Bool {
+    get
+  }
+  public var insetFrame: CoreGraphics.CGRect {
+    get
+  }
+  public var tagName: Swift.String {
+    get
+  }
+  public var allLooks: [HKTestingKit.HKLook] {
+    get
+  }
+  public func allAverageLooks(excludeScrollableElements: Swift.Bool = false) -> [HKTestingKit.HKAverageLook]
+  public func relativePointsForAverageLooks(offset: CoreGraphics.CGPoint = .zero) -> [CoreGraphics.CGPoint]
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class HKOrganization : ObjectiveC.NSObject, Foundation.NSCoding {
+  final public let id: Swift.String
+  final public let iconURL: Foundation.URL?
+  final public let name: Swift.String
+  final public let memberCount: Swift.Int
+  final public let subscription: HKTestingKit.HKSubscription?
+  final public let projectCount: Swift.Int
+  final public let sessionCount: Swift.Int
+  public init(id: Swift.String, name: Swift.String, iconURL: Foundation.URL?, memberCount: Swift.Int, projectCount: Swift.Int, sessionCount: Swift.Int, subscription: HKTestingKit.HKSubscription?)
+  convenience public init?(dictRep: [Swift.String : Any])
+  @objc convenience required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension HKTestingKit.HKEyeTrackingType : Swift.Equatable {}
+extension HKTestingKit.HKEyeTrackingType : Swift.Hashable {}
+extension HKTestingKit.HKEyeTrackingType : Swift.RawRepresentable {}
+extension HKTestingKit.HKControlsAppearance : Swift.Equatable {}
+extension HKTestingKit.HKControlsAppearance : Swift.Hashable {}
+extension HKTestingKit.HKControlsAppearance : Swift.RawRepresentable {}
+extension HKTestingKit.HKSubscriptionPlanInterval : Swift.Equatable {}
+extension HKTestingKit.HKSubscriptionPlanInterval : Swift.Hashable {}
+extension HKTestingKit.HKSubscriptionPlanInterval : Swift.RawRepresentable {}
+extension HKTestingKit.HKTestingContentType : Swift.Hashable {}
+extension HKTestingKit.HKTestingContentType : Swift.RawRepresentable {}
+extension HKTestingKit.HKPageOrientation : Swift.Equatable {}
+extension HKTestingKit.HKPageOrientation : Swift.Hashable {}
+extension HKTestingKit.HKPageOrientation : Swift.RawRepresentable {}
+extension HKTestingKit.HKSessionState : Swift.Equatable {}
+extension HKTestingKit.HKSessionState : Swift.Hashable {}
+extension HKTestingKit.HKSessionState : Swift.RawRepresentable {}
+extension HKTestingKit.HKPageState : Swift.Equatable {}
+extension HKTestingKit.HKPageState : Swift.Hashable {}
+extension HKTestingKit.HKPageState : Swift.RawRepresentable {}
+extension HKTestingKit.HKSetupTestViewController : UIKit.UITextFieldDelegate {}
+extension HKTestingKit.HKSessionUploadError : Swift.Equatable {}
+extension HKTestingKit.HKSessionUploadError : Swift.Hashable {}
+extension HKTestingKit.HKPageElementType : Swift.Equatable {}
+extension HKTestingKit.HKPageElementType : Swift.Hashable {}
+extension HKTestingKit.HKPageElementType : Swift.RawRepresentable {}

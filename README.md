@@ -88,4 +88,4 @@ Let us know what you think either by [emailing us](support@usehawkeye.com) or by
 
 ## License & Copyright
 
-Copyright © 2019 Hawkeye Labs, Inc. All rights reserved. Licensed under Apache-2.0. See LICENSE for more details. You can also view the Hawkeye [Terms of Service](https://usehawkeye.com/terms) and [Privacy Polciy](https://usehawkeye.com/privacy).
+Copyright © 2019 Hawkeye Labs, Inc. All rights reserved. Licensed under Apache-2.0. See LICENSE for more details. By using this SDK, you are also agreeing to the Hawkeye [Terms of Service](https://usehawkeye.com/terms) and [Privacy Polciy](https://usehawkeye.com/privacy).

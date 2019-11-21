@@ -2,11 +2,11 @@
 
 The Hawkeye SDK gives you deep insights into how people use your apps, powered by the TrueDepth camera.
 
-- Conduct eye tracking tests
-- Add instructions and invite testers to participate in studies remotely
-- Playback screen recordings showing where testers look
-- View aggregated look, touch, and scroll heatmaps
-- Simple integration - all it takes is 2 lines of code!
+- 👀 Conduct eye tracking tests
+- 📝 Add instructions and invite testers to participate in studies remotely
+- 🎥 Playback screen recordings showing where testers look
+- 🔥 View aggregated look, touch, and scroll heatmaps
+- ✅ Simple integration - all it takes is 2 lines of code!
 
 ## How to Get Set Up
 

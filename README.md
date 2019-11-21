@@ -57,8 +57,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #### 3. Add the Hawkeye URL scheme
 In order to invite testers using links, you need to add the Hawkeye URL scheme to your app. In Xcode, navigate to your project settings and select your app in the list of targets. Then, open the Info section and locate the URL Types section. Add a new type and set the identifier and URL scheme values to `hk-APP_ID`. Repalce `APP_ID` with the value used in the previous step.
 
+![URL Scheme Example](https://more-web.s3-us-west-1.amazonaws.com/URLExample.png)
+
 #### 4. Add Camera and Microphone Permissions
 Hawkeye uses the camera and microphone to record tests. This means you need to add descriptions explaining how these permissions are used.
+
+![Info.plist Example](https://more-web.s3-us-west-1.amazonaws.com/PlistExample.png)
 
 Open your `Info.plist` file and add the `NSCameraUsageDescription` and `NSMicrophoneUsageDescription` keys to the file. If your app already includes values for these keys, you don’t need to change anything. Otherwise, you can use these examples:
 

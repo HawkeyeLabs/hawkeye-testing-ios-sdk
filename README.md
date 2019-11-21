@@ -84,7 +84,7 @@ Here are a few questions to keep in mind while you try out the SDK:
 - Would you find value in offering test participants a discount code / Amazon gift card to incentivize participation?
 - Do you have hesitations around the privacy concerns associated with adding Hawkeye to your app?
 
-Let us know what you think either by [emailing us](support@usehawkeye.com) or by filling out [this survey]().
+Let us know what you think either by [emailing us](support@usehawkeye.com) or by filling out [this survey](https://usehawkeye.typeform.com/to/UmCtia).
 
 ## License & Copyright
 

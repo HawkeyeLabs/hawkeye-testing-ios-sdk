@@ -9,7 +9,7 @@ The Hawkeye SDK gives you deep insights into how people use your apps, powered b
 - 🔥 View aggregated look, touch, and scroll heatmaps
 - ✅ Simple integration - all it takes is 2 lines of code!
 
-## How to Get Set Up
+## Install the SDK
 
 #### 1. Download the SDK
 You can download the SDK [here](). CocoaPods support is coming soon, but we're waiting on them to add support for XCFrameworks. For now, you'll have to install manually.
@@ -20,8 +20,54 @@ Navigate to the General section of your Xcode project’s settings and add `Hawk
 #### 3. Install Alamofire and SDWebImage
 Because CocoaPods doesn’t support XCFrameworks yet, you’ll have to manually install `Alamofire` and `SDWebImage`, which the Hawkeye SDK is dependent upon. CocoaPods is the easiest way to install these dependencies. An example Podfile can be found in the example project included with the SDK.
 
-#### 4. Create an App project and start testing 🎉
+## How to Get Set Up
+
+#### 1. Create an App project
 Once you've installed the SDK, head to the [Hawkeye web dashboard](https://dashboard.usehawkeye.com), create a new project, and select the "app" test type.
+
+#### 2. Set up Hawkeye in your AppDelegate
+Add the following 2 lines of code to your AppDelegate. You'll be given your `SDK Token` and `App ID` when you create an app project on the Hawkeye dashboard.
+
+```
+import Hawkeye
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions 
+    launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool 
+  {
+
+    // 1. Set your Hawkeye token and app ID
+    Hawkeye.setToken("SDK TOKEN GOES HERE", appID: "APP ID GOES HERE")
+      
+    return true
+  }
+
+  func application(_ app: UIApplication, open url: URL, 
+    options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool 
+  {
+
+    // 2. Notify Hawkeye when your app is opened by a URL 
+    return Hawkeye.appDidOpenWithURL(url)
+
+  }
+}
+```
+
+#### 3. Add the Hawkeye URL scheme
+In order to invite testers using links, you need to add the Hawkeye URL scheme to your app. In Xcode, navigate to your project settings and select your app in the list of targets. Then, open the Info section and locate the URL Types section. Add a new type and set the identifier and URL scheme values to `hk-APP_ID`. Repalce `APP_ID` with the value used in the previous step.
+
+#### 4. Add Camera and Microphone Permissions
+Hawkeye uses the camera and microphone to record tests. This means you need to add descriptions explaining how these permissions are used.
+
+Open your `Info.plist` file and add the `NSCameraUsageDescription` and `NSMicrophoneUsageDescription` keys to the file. If your app already includes values for these keys, you don’t need to change anything. Otherwise, you can use these examples:
+
+  `NSCameraUsageDescription` Hawkeye uses the camera to track where you look during research studies.
+
+  `NSMicrophoneUsageDescription` Hawkeye uses the microphone to record what you say during research studies.
+  
+#### 5. Run your app 🎉
+If everything worked, refresh the project page on the Hawkeye dashboard and you’ll see a confirmation message.
 
 ## Feedback
 We'd love to hear what you think! If you've got any feature requests, bugs, or general feedback, please let us know. **Either email us at [support@usehawkeye.com](support@usehawkeye.com) or hit the chat button on the Hawkeye dashboard.**

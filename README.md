@@ -28,7 +28,7 @@ Once you've installed the SDK, head to the [Hawkeye web dashboard](https://dashb
 #### 2. Set up Hawkeye in your AppDelegate
 Add the following 2 lines of code to your AppDelegate. You'll be given your `SDK Token` and `App ID` when you create an app project on the Hawkeye dashboard.
 
-```
+```swift
 import Hawkeye
 
 class AppDelegate: UIResponder, UIApplicationDelegate {

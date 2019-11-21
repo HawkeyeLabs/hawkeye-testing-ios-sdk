@@ -63,7 +63,6 @@ In order to invite testers using links, you need to add the Hawkeye URL scheme t
 Hawkeye uses the camera and microphone to record tests. This means you need to add descriptions explaining how these permissions are used.
 
 ![Info.plist Example](https://more-web.s3-us-west-1.amazonaws.com/PlistExample.png)
-
 Open your `Info.plist` file and add the `NSCameraUsageDescription` and `NSMicrophoneUsageDescription` keys to the file. If your app already includes values for these keys, you don’t need to change anything. Otherwise, you can use these examples:
 
   `NSCameraUsageDescription` Hawkeye uses the camera to track where you look during research studies.

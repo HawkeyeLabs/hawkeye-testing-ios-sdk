@@ -78,13 +78,13 @@ We'd love to hear what you think! If you've got any feature requests, bugs, or g
 ## Beta Goals
 Here are a few questions to keep in mind while you try out the SDK:
 - How well do heatmaps work?
-- Are there times when the SDK makes your app slower?
+- Has integrating the SDK had any impact on your core app experience? If so, what? 
 - Is explicitly inviting testers useful or would you prefer Hawkeye collect analytics in the background?
 - Are there other ways you'd like to recruit testers? Push notifications? Integrations with tools like Intercom? In app promos?
 - Would you find value in offering test participants a discount code / Amazon gift card to incentivize participation?
 - Do you have hesitations around the privacy concerns associated with adding Hawkeye to your app?
 
-Let us know what you think either by [emailing us](support@usehawkeye.com) or by filling out [this survey]().
+Let us know what you think either by [emailing us](support@usehawkeye.com) or by filling out [this survey](https://usehawkeye.typeform.com/to/UmCtia).
 
 ## License & Copyright
 

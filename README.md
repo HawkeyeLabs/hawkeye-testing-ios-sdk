@@ -70,7 +70,7 @@ Open your `Info.plist` file and add the `NSCameraUsageDescription` and `NSMicrop
   `NSMicrophoneUsageDescription` Hawkeye uses the microphone to record what you say during research studies.
   
 #### 5. Run your app 🎉
-If everything worked, refresh the project page on the Hawkeye dashboard and you’ll see a confirmation message.
+If everything worked, open your app project on the Hawkeye dashboard and you’ll see a confirmation message.
 
 ## Feedback
 We'd love to hear what you think! If you've got any feature requests, bugs, or general feedback, please let us know. **Either email us at [support@usehawkeye.com](support@usehawkeye.com) or hit the chat button on the Hawkeye dashboard.**

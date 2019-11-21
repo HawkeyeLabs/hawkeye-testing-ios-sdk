@@ -36,3 +36,7 @@ Here are a few questions to keep in mind while you try out the SDK:
 - Do you have hesitations around the privacy concerns associated with adding Hawkeye to your app?
 
 Let us know what you think either by replying to this email or by filling out [this survey]().
+
+## License & Copyright
+
+Copyright © 2019 Hawkeye Labs, Inc. All rights reserved.

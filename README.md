@@ -1,6 +1,6 @@
 # Hawkeye iOS SDK
 
-The Hawkeye SDK gives you deep insights into how people use your apps, powered by the True Depth camera.
+The Hawkeye SDK gives you deep insights into how people use your apps, powered by the TrueDepth camera.
 
 - Conduct eye tracking tests
 - Add instructions and invite testers to participate in studies remotely

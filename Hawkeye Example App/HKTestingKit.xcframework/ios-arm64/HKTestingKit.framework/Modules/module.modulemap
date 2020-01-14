@@ -1,4 +1,0 @@
-framework module HKTestingKit {
-  header "HKTestingKit-Swift.h"
-  requires objc
-}

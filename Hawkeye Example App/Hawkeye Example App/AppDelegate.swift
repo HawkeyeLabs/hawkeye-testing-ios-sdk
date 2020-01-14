@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //
         // 1️⃣ Set your Hawkeye SDK token and app ID. You can find your SDK token and app ID on the Hawkeye web dashboard at https://dashboard.usehawkeye.com/team_settings/apps.
         //
-        Hawkeye.setToken("SDK_TOKEN", appID: "APP_ID")
+        Hawkeye.setToken("6Qh7dARWWjF_i1vsgyb_", appID: "6gm15le8")
         
         return true
     }

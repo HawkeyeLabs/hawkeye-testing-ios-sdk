@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0136C9D5238670920024BD4A /* Hawkeye.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0136C9D123866D5F0024BD4A /* Hawkeye.xcframework */; };
-		0136C9D6238670920024BD4A /* Hawkeye.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0136C9D123866D5F0024BD4A /* Hawkeye.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		018F739723A8622F005BC34B /* Hawkeye.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018F739623A8622F005BC34B /* Hawkeye.xcframework */; };
+		018F739823A86230005BC34B /* Hawkeye.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 018F739623A8622F005BC34B /* Hawkeye.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		01DCE62023838A7400913420 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCE61623838A5E00913420 /* AppDelegate.swift */; };
 		01DCE62123838A7600913420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01DCE61723838A5F00913420 /* Assets.xcassets */; };
 		01DCE62223838A7800913420 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCE61B23838A5F00913420 /* CollectionViewController.swift */; };
@@ -23,13 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0136C9D7238670920024BD4A /* Embed Frameworks */ = {
+		018F739923A86230005BC34B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0136C9D6238670920024BD4A /* Hawkeye.xcframework in Embed Frameworks */,
+				018F739823A86230005BC34B /* Hawkeye.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,8 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0136C9CD2384BD470024BD4A /* Hawkeye.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Hawkeye.xcframework; sourceTree = "<group>"; };
-		0136C9D123866D5F0024BD4A /* Hawkeye.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Hawkeye.xcframework; path = "../../hawkeye-ios/Frameworks/XCFrameworks/Hawkeye.xcframework"; sourceTree = "<group>"; };
+		018F739623A8622F005BC34B /* Hawkeye.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Hawkeye.xcframework; path = ../Hawkeye.xcframework; sourceTree = "<group>"; };
 		01DCE5E8238389F500913420 /* Hawkeye Example App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hawkeye Example App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DCE61423838A5E00913420 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		01DCE61523838A5E00913420 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -52,10 +51,6 @@
 		01DCE61D23838A5F00913420 /* FloatingUIElementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingUIElementViewController.swift; sourceTree = "<group>"; };
 		01DCE61E23838A6000913420 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		01DCE61F23838A6000913420 /* HorizontalScrollExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollExampleCell.swift; sourceTree = "<group>"; };
-		01DCE62C23838B7000913420 /* HKEyeTrackingKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HKEyeTrackingKit.xcframework; sourceTree = "<group>"; };
-		01DCE6332383CC6A00913420 /* HKTestingKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HKTestingKit.xcframework; sourceTree = "<group>"; };
-		01DCE6362383CE1600913420 /* HKEyeTrackingKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = HKEyeTrackingKit.xcframework; path = "../hawkeye-ios/Frameworks/XCFrameworks/HKEyeTrackingKit.xcframework"; sourceTree = "<group>"; };
-		01DCE63C2384774500913420 /* HKTestingKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = HKTestingKit.xcframework; path = "../hawkeye-ios/Frameworks/XCFrameworks/HKTestingKit.xcframework"; sourceTree = "<group>"; };
 		2347FF750F38D03E460AF3B8 /* Pods-Hawkeye Example App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hawkeye Example App.debug.xcconfig"; path = "Target Support Files/Pods-Hawkeye Example App/Pods-Hawkeye Example App.debug.xcconfig"; sourceTree = "<group>"; };
 		78923F7C8C74B2E591EF7438 /* Pods-Hawkeye Example App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hawkeye Example App.release.xcconfig"; path = "Target Support Files/Pods-Hawkeye Example App/Pods-Hawkeye Example App.release.xcconfig"; sourceTree = "<group>"; };
 		86FB6A50EBE125F92AF75D26 /* Pods_Hawkeye_Example_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hawkeye_Example_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0136C9D5238670920024BD4A /* Hawkeye.xcframework in Frameworks */,
+				018F739723A8622F005BC34B /* Hawkeye.xcframework in Frameworks */,
 				29321B2C4DDCBCEBCA2F2A13 /* Pods_Hawkeye_Example_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,12 +117,7 @@
 		01DCE62B23838B7000913420 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0136C9CD2384BD470024BD4A /* Hawkeye.xcframework */,
-				0136C9D123866D5F0024BD4A /* Hawkeye.xcframework */,
-				01DCE63C2384774500913420 /* HKTestingKit.xcframework */,
-				01DCE6362383CE1600913420 /* HKEyeTrackingKit.xcframework */,
-				01DCE6332383CC6A00913420 /* HKTestingKit.xcframework */,
-				01DCE62C23838B7000913420 /* HKEyeTrackingKit.xcframework */,
+				018F739623A8622F005BC34B /* Hawkeye.xcframework */,
 				86FB6A50EBE125F92AF75D26 /* Pods_Hawkeye_Example_App.framework */,
 			);
 			name = Frameworks;
@@ -154,7 +144,7 @@
 				01DCE5E5238389F500913420 /* Frameworks */,
 				01DCE5E6238389F500913420 /* Resources */,
 				84F1AEC3733CA98CB05763EE /* [CP] Embed Pods Frameworks */,
-				0136C9D7238670920024BD4A /* Embed Frameworks */,
+				018F739923A86230005BC34B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

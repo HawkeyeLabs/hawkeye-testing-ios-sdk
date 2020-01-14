@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/Hawkeye.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		HYAoZaqnIrgtkHK5GxNAZxrvLe8=
+		AGFsAar63129+IL4j0BoU+jyg84=
 		</data>
 		<key>Modules/Hawkeye.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/Hawkeye.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		HYAoZaqnIrgtkHK5GxNAZxrvLe8=
+		AGFsAar63129+IL4j0BoU+jyg84=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -351,7 +351,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1GAGgEqXOX36RZrhbE1dOCt+H/zJCDO7Zq/Rbkr2EMs=
+			7fpjL31jDDASGr9uACa08KdYNh1wxBhJrk6+UL6UTbM=
 			</data>
 		</dict>
 		<key>Modules/Hawkeye.swiftmodule/x86_64.swiftdoc</key>
@@ -372,7 +372,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1GAGgEqXOX36RZrhbE1dOCt+H/zJCDO7Zq/Rbkr2EMs=
+			7fpjL31jDDASGr9uACa08KdYNh1wxBhJrk6+UL6UTbM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

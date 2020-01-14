@@ -9,16 +9,25 @@ The Hawkeye SDK gives you deep insights into how people use your apps, powered b
 - 🔥 View aggregated look, touch, and scroll heatmaps
 - ✅ Simple integration - all it takes is 2 lines of code!
 
-## Install the SDK
+## Install using CocoaPods
 
-#### 1. Download the SDK
-You can download the SDK [here](). CocoaPods support is coming soon, but we're waiting on them to add support for XCFrameworks. For now, you'll have to install manually.
+#### 1. Install the CocoaPods 1.9 beta
+In order to install the Hawkeye SDK, you'll need to upgrade to the CocoaPods 1.9 beta. This beta adds support for XCFrameworks, which is needed to install the SDK.
+```
+sudo gem install cocoapods --pre
+```
 
-#### 2. Add Hawkeye to your Xcode project
-Navigate to the General section of your Xcode project’s settings and add `Hawkeye.xcframework` to `Frameworks, Libraries, and Embedded Content`.
+#### 2. Add Hawkeye to your Podfile
+Make sure to directly reference this git repo in your Podfile.  
+```
+pod 'Hawkeye', :git => 'https://github.com/matthewmoss/hawkeye-ios-sdk'
+```
 
-#### 3. Install Alamofire and SDWebImage
-Because CocoaPods doesn’t support XCFrameworks yet, you’ll have to manually install `Alamofire` and `SDWebImage`, which the Hawkeye SDK is dependent upon. CocoaPods is the easiest way to install these dependencies. An example Podfile can be found in the example project included with the SDK.
+#### 3. Install the Pod
+Run the following to install Hawkeye.
+```
+pod install
+```
 
 ## How to Get Set Up
 

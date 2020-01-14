@@ -24,7 +24,7 @@ pod 'Hawkeye', :git => 'https://github.com/matthewmoss/hawkeye-ios-sdk'
 ```
 
 #### 3. Install the Pod
-Run the following to install the Hawkeye Pod.
+Run the following to install Hawkeye.
 ```
 pod install
 ```

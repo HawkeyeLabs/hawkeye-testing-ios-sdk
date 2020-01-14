@@ -1,0 +1,4 @@
+framework module Hawkeye {
+  header "Hawkeye-Swift.h"
+  requires objc
+}

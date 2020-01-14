@@ -29,13 +29,13 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/matthewmoss/hawkeye-ios-sdk'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'Commercial', :file => 'LICENSE' }
   s.author           = { 'matthewmoss' => 'matt@usehawkeye.com' }
   s.source           = { :git => 'https://github.com/matthewmoss/hawkeye-ios-sdk.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/usehawkeye'
 
   s.ios.deployment_target = '8.0'
-  s.swift_versions = '4.0'
+  s.swift_versions = '5.0'
 
   s.vendored_frameworks = 'Hawkeye.xcframework'
   s.frameworks = 'ARKit'

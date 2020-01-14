@@ -1,22 +1,34 @@
 PODS:
   - Alamofire (4.9.0)
+  - Hawkeye (0.0.1):
+    - Alamofire (~> 4.7)
+    - SDWebImage (~> 4.0)
   - SDWebImage (4.4.7):
     - SDWebImage/Core (= 4.4.7)
   - SDWebImage/Core (4.4.7)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.7)
-  - SDWebImage (~> 4.0)
+  - Hawkeye (from `https://github.com/matthewmoss/hawkeye-ios-sdk`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - SDWebImage
 
+EXTERNAL SOURCES:
+  Hawkeye:
+    :git: https://github.com/matthewmoss/hawkeye-ios-sdk
+
+CHECKOUT OPTIONS:
+  Hawkeye:
+    :commit: 59773f148d1a41a16b0203755547a9bd904d97a0
+    :git: https://github.com/matthewmoss/hawkeye-ios-sdk
+
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Hawkeye: b66517bf6a006b56a00df42385be769b5d9a0592
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
 
-PODFILE CHECKSUM: 8cf299b4caf5c7350d97d69aa8076ee02e0c2ee7
+PODFILE CHECKSUM: 3d393ddfed06bda86035f5681bcef08e2f6729cb
 
-COCOAPODS: 1.8.0
+COCOAPODS: 1.9.0.beta.2
